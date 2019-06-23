@@ -1,0 +1,20 @@
+.row{
+   margin-bottom: 2px;
+   border-bottom: 1px #302f2f solid;
+   border-top: 1px #302f2f solid;
+    
+    
+}
+
+.col-lg-2{
+    background-color: rgb(160, 153, 153);
+    height: auto;
+}
+.col-lg-5.t{
+    background-color: rgba(62, 102, 48, 0.452);
+    height: auto;
+}
+.col-lg-5{
+    background-color: rgba(233, 141, 37, 0.863);
+    height: auto;
+}

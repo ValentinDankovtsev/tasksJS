@@ -1,0 +1,14 @@
+.sub {
+    position: fixed;
+    padding: 1px 0px;
+
+    font-style: italic;
+    border: 1px solid #796161;
+    border-radius: 4px;
+    
+}
+
+#res{
+    width: 100px;
+    height: 10px;
+}

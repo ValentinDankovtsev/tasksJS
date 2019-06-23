@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>tasks3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link href="../task3/css/main.css" rel="stylesheet">
+    <!-- <link href="../task3/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 ">
+                <p>// Example 1 </p>
+                <p>let a1 = 'Text';</p>
+                <p>let b1 = a1;</p>
+                <p>a1 = 'another text';</p>
+                <p>console.log('a1 = ', a1);</p>
+                <p>console.log('b1 = ', b1);</p>
+            </div>
+            <div class="col-lg-5 t ">
+                <p>// Example 1 </p>
+                <p>В переменную a1 присваивается значение 'Text', сохраненное в памяти </p>
+                <p>В переменную b1 присваивается скопированые данные 'Text' и записаны в отдельное место в памяти</p>
+                <p>в а1 переписывает новое значение, значение у b1 свое </p>
+                <p>a1 = another text</p>
+                <p>b1 = Text</p>
+            </div>
+            <div class="col-lg-5 ">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 ">
+                <p>// Example 2</p>
+                <p>let a2 = 28;</p>
+                <p>let b2 = a2;</p>
+                <p>a2 = 41;</p>
+                <p>console.log('a2 = ', a2);</p>
+                <p>console.log('b2 = ', b2);</p>
+            </div>
+            <div class="col-lg-5 t ">
+                <p>// Example 2 </p>
+                <p> В данном примере тоже самое</p>
+                <p> <i> Переменная хранит не само значение, а переменная имеет ссылку на область памяти где хранится это
+                        значение</i> <br> </p>
+                <p> <br> <i>для строк, чисел, true/false, null/undefined (перечисленные данные копируются целиком, " по
+                        значению")</i> </p>
+                <p>a2 = 41</p>
+                <p>b2 = 28</p>
+            </div>
+            <div class="col-lg-5  ">
+
+            </div>
+        </div>
+
+
+        <!-- ПРИМЕР 3  -->
+        <div class="row">
+            <div class="col-lg-2 ">
+                <p>// Example 3 </p>
+                <p>let a3 = {<br>
+                    &nbsp;&nbsp; name: 'Ivan Ivanov',<br>
+                    &nbsp;&nbsp; age: 41,<br>
+                    };</p>
+                <p>let b3 = a3;</p>
+                <p>a3.name = 'Igor Petrov';</p>
+                <p>console.log('a3 = ', a3);</p>
+                <p>console.log('b3 = ', b3);</p>
+                <p></p>
+            </div>
+            <div class="col-lg-5 t ">
+                <p>// Example 3 </p>
+                <p> В переменную записывается ссылка на объект </p>
+                <p><br></p>
+                <p> В переменную b3 записывается тоже ссылка на тот же объект, только адрес но не значение. <br> </p>
+                <p> при переназначении свойства объекта name, меняется значение в переменных которые ссылаются на этот
+                    самый объект <br> </p>
+                <p>a3.name = Igor Petrov</p>
+                <p>b3.name = Igor Petrov</p>
+            </div>
+            <div class="col-lg-5  ">
+                <p>let a3 = {<br>
+                    &nbsp;&nbsp; name: 'Ivan Ivanov',<br>
+                    &nbsp;&nbsp; age: 41,<br>
+                    };</p>
+                <p>let b3 = {};</p>
+                <p> for (let key in a3){ <br>
+                    &nbsp;&nbsp; b3[key] = a3[key]<br>
+                    };</p>
+                <p>console.log('a3 = ', {name: "Igor Petrov", age: 41});</p>
+                <p>console.log('b3 = ', {name: "Ivan Ivanov", age: 41});</p>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- ПРИМЕР4  -->
+        <div class="row">
+            <div class="col-lg-2 ">
+                <p>// Example 4 </p>
+                <p>let a4 = [1,3,5,7,9];</p>
+                <p>let b4 = a4;</p>
+                <p>a4 = [2,4,6,8,10];</p>
+                <p>console.log('a4 = ', a4);</p>
+                <p>console.log('b4 = ', b4);</p>
+
+            </div>
+            <div class="col-lg-5 t ">
+                <p><br></p>
+                <p><br></p>
+                <p>в b4 как мы и ожидаем передалась ссылка на значения масссива a4 <br> </p>
+                <p> a4 = [] ; это создание нового массива <br> </p>
+                <p>a4 =[2,4,6,8,10]</p>
+                <p>b4 = [1,3,5,7,9]</p>
+            </div>
+            <div class="col-lg-5 ">
+                <p> </p>
+                <p> </p>
+                <p><br></p>
+                <p><br></p>
+                <p> <br> </p>
+                <p> <br> </p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+
+
+        <!-- ПРИМЕР 5  -->
+        <div class="row">
+            <div class="col-lg-2 ">
+                <p>// Example 5 </p>
+                <p>let a5 = [1,2,3,4,5];</p>
+                <p>let b5 = a5;</p>
+                <p>a5[0] = 0;</p>
+                <p>console.log('a5 = ', a5);</p>
+                <p>console.log('b5 = ', b5);</p>
+
+            </div>
+            <div class="col-lg-5 t ">
+                <p><br></p>
+                <p><br></p>
+                <p> Данные массивы скопированы по ссылке, переменные ссылаются на один массив <br> </p>
+                <p>a5 =[0,2,3,4,5]</p>
+                <p>b5 = [0,2,3,4,5]</p>
+            </div>
+            <div class="col-lg-5 ">
+                <p>Создаем клон массива методом forEach </p>
+                <p> let a5 = [1,2,3,4,5]; </p>
+                <p>let b5 = [];<br></p>
+                <p>a5.forEach(function(i){ <br> </p>
+                <p>&nbsp;&nbsp; b5.push(i); <br> </p>
+                <p>})</p>
+                <p>a5[0] = 0;</p>
+                <p>console.log('a5 = ', [0, 2, 3, 4, 5]);</p>
+                <p>console.log('b5 = ', [1, 2, 3, 4, 5]);</p>
+            </div>
+        </div>
+
+        <!-- ПРИМЕР 6  -->
+        <div class="row">
+            <div class="col-lg-2 ">
+                <p>// Example 6 </p>
+                <p>let a6 = [1,2,3,4,5];;</p>
+                <p>let b6 = a6;</p>
+                <p>a6.push(6)</p>
+                <p>console.log('a6 = ', a6);</p>
+                <p>console.log('b6 = ', b6);</p>
+
+            </div>
+            <div class="col-lg-5 t ">
+                <p><br></p>
+                <p><br></p>
+                <p> метод push - "мутабельный" изменяет массив <br> </p>
+                <p>a6 =[1,2,3,4,5,6]</p>
+                <p>b6 = [1,2,3,4,5,6]</p>
+            </div>
+            <div class="col-lg-5 ">
+                <p>Смысл такой же </p>
+                <p>Склонировать массив перебором и добавить с клону </p>
+                <p><br></p>
+                <p><br></p>
+                <p> <br> </p>
+                <p> <br> </p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- ПРИМЕР 7  -->
+        <div class="row">
+            <div class="col-lg-2 ">
+                <p>// Example 7 </p>
+                <p>let a7 = [{<br>
+                    &nbsp;&nbsp;name: 'Vasya',<br>
+                    &nbsp;&nbsp;age: 12
+                    <p>}, {</p>
+                    &nbsp;&nbsp;name: 'Misha', <br>
+                    &nbsp;&nbsp;age: 14
+                    <p>}, {</p>
+                    &nbsp;&nbsp;name: 'Pavel',<br>
+                    &nbsp;&nbsp;age: 13
+                    <p>}];</p>
+                    <p>let b7 = a7;</p>
+                    <p><br></p>
+                    <p>a7.map((obj)=> {</p>
+                    <p>obj.name = obj.name + ' Pupkin';</p>
+                    <p>obj.age = obj.age;</p>
+                    <p>});</p>
+                    <p>console.log('a7 = ', );</p>
+                    <p>console.log('b7 = ', );</p>
+
+            </div>
+            <div class="col-lg-5 t ">
+                <p><br></p>
+                <p><br></p>
+                <p> <br> </p>
+                <p>a7 = [{name: 'Vasya Pupkin ',age: 12},{name: ''Misha Pupkin ',age: 14},{name: 'Pavel Pupkin ',age:
+                    13}])</p>
+                <p>b7 = [{name: 'Vasya Pupkin ',age: 12},{name: ''Misha Pupkin ',age: 14},{name: 'Pavel Pupkin ',age:
+                    13}]) </p>
+            </div>
+            <div class="col-lg-5 ">
+                <p>Загуглен (stack overflow) такой метод  </p>
+                <p> глубоког клонирования. </p>
+                <p> Но решения  jQuery.extend пока не юзал<br></p>
+                <p><br></p>
+                <p>function makeDeepCopy(obj){ <br> </p>
+                <p>let newObj = {}; <br> </p>
+                <p>for( let prop in obj) {</p>
+                <p>if(!obj.hasOwnProperty(prop)) return;</p>
+                <p>if (typeof obj[prop] === "object" ){</p>
+                    <p>newObj[prop] = makeDeepCopy(obj[prop])</p>
+                    <p>}else {</p>
+                        <p>newObj[prop] = obj[prop];</p>
+                        <p> }</p>
+                        <p>}</p>
+                        <p>return newObj;</p>
+                        <p>}</p>
+                        <p>const b7 = makeDeepCopy(a7);</p>
+                        <p>//результат в консоле</p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="../task3/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../task3/js/bootstrap.min.js"></script>
+</body>
+
+</html>

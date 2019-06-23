@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task2</title>
+</head>
+
+<body>
+
+    <script>
+        const week = {
+
+            arr: {
+                1: "Понедельник",
+                2: "Вторник",
+                3: "Среда",
+                4: "Четверг",
+                5: "Пятница",
+                6: "Суббота",
+                7: "Воскресенье"
+            },
+
+            operIf: function (val) {
+                let res = "";
+                let value = +val;
+                if (value == value && value >= 1 && value <= 7) { // если преобразование к числу не  NaN и было 1-7
+
+
+                    if (value === 1) {
+                        res = this.arr[value];
+                    } else if (value === 2) {
+                        res = this.arr[value];
+                    } else if (value === 3) {
+                        res = this.arr[value];
+                    } else if (value === 4) {
+                        res = this.arr[value];
+                    } else if (value === 5) {
+                        res = this.arr[value];
+                    } else if (value === 6) {
+                        res = this.arr[value];
+                    } else if (value === 7) {
+                        res = this.arr[value];
+                    }
+
+
+                } else {
+                    console.log("Ошибка, надо ввести цифирь от 1 до 7... ")
+                    return first();
+                };
+                return console.log(res);
+
+            },
+
+            operSwitch: function (val) {
+                switch (val) {
+                    case 1:
+                        console.log(this.arr[val])
+                        break;
+                    case 2:
+                        console.log(this.arr[val])
+                        break;
+                    case 3:
+                        console.log(this.arr[val])
+                        break;
+                    case 4:
+                        console.log(this.arr[val])
+                        break;
+                    case 5:
+                        console.log(this.arr[val])
+                        break;
+                    case 6:
+                        console.log(this.arr[val])
+                        break;
+                    case 7:
+                        console.log(this.arr[val])
+                        break;
+                }
+            }
+        };
+
+        let val = prompt("Вводите нумер дня недели: ", 0);
+        week.operSwitch(+val);
+        let val2 = prompt("Вводите нумер дня недели: ", 0);
+        week.operIf(val2);
+        function first() {
+            week.operIf(val2);
+        }
+    </script>
+</body>
+
+</html>
