@@ -43,13 +43,10 @@
     
 
         arr = arr.filter(function(i){
-            if(i%3 === 1){
-              return i;
-            }
+            return i%3 === 1;
         });
 
-        
-                      
+                              
       
     
         console.log(arr);
