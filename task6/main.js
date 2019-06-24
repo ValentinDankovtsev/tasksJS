@@ -11,7 +11,7 @@
         minIndex = +prompt("Введите начало массива: ", 0);
         maxIndex = +prompt("Введите конец массива: ", 0);
 
-        if (minIndex == minIndex && maxIndex == maxIndex) {
+        if ( !isNaN(minIndex) && !isNaN (maxIndex)) {
             for (; minIndex <= maxIndex; minIndex++) {
 
                 arr.push(minIndex);
@@ -40,17 +40,19 @@
     
     const filterArr = (Arr) => {
         let arr = Arr();
-        let filterArr = [];
+    
 
-        arr.forEach(i => {
+        arr = arr.filter(function(i){
             if(i%3 === 1){
-                filterArr.push(i);
+              return i;
             }
         });
+
+        
                       
       
     
-        console.log(filterArr);
+        console.log(arr);
 
     };
 

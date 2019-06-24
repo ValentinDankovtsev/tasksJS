@@ -26,7 +26,7 @@
             operIf: function (val) {
                 let res = "";
                 let value = +val;
-                if (value == value && value >= 1 && value <= 7) { // если преобразование к числу не  NaN и было 1-7
+                if (!isNaN(value) && value >= 1 && value <= 7) { // если преобразование к числу не  NaN и было 1-7
 
 
                     if (value === 1) {
@@ -48,7 +48,7 @@
 
                 } else {
                     console.log("Ошибка, надо ввести цифирь от 1 до 7... ")
-                    return first();
+                    return inputFoo();
                 };
                 return console.log(res);
 
@@ -81,13 +81,21 @@
             }
         };
 
-        let val = prompt("Вводите нумер дня недели: ", 0);
-        week.operSwitch(+val);
-        let val2 = prompt("Вводите нумер дня недели: ", 0);
-        week.operIf(val2);
-        function first() {
+        function inputFoo() {
+            let val = prompt("Вводите нумер дня недели: ");
+
+            week.operSwitch(+val);
+
+            let val2 = prompt("Вводите нумер дня недели: ");
+
             week.operIf(val2);
-        }
+
+            function first() {
+                week.operIf(val2);
+            }
+        };
+
+        inputFoo();
     </script>
 </body>
 
