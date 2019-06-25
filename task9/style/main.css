@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(190, 180, 180);
+    user-select: none;
+}
+.btn{
+    width: 50px;
+}
+
+.display{
+    width: auto;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+   
+}
+.calc{
+    background-color: rgb(247, 221, 221);
+    border: 2px solid rgb(243, 205, 243);
+    border-radius: 6px;
+    
+}
+.buttons{
+    
+}
+ul{
+    padding: 0;
+}
+.form-control{
+    text-align: right;
+    
+}
+.form-control.cache{
+    height: 15px;
+    color: rgb(148, 147, 147);
+    font-size: 14px;
+}
