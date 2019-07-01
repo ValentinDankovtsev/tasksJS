@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en ru">
 
 <head>
     <meta charset="utf-8">
@@ -19,13 +19,15 @@
             <div>
                 <div id="title">
                     Прогноз погоды на 5 дней.
-                </div>
+                    <div  id="city" > </div>
+                  </div>
+                
             </div>
 
 
-            <div id="pac-container" class="form-inline">
+            <div id="pac-container" class="form-inline pac-card">
 
-                <input id="pac-input" class="form-control" type="text" placeholder="Поиск города..." data-lat=""
+                <input id="pac-input" class="form-control " type="text" placeholder="Поиск города..." data-lat=""
                     data-long="">
                 <button id="button" class="btn btn-success" data-push>Загрузить погоду!</button>
             </div>

@@ -42,6 +42,9 @@
 
                 JSON.parse(xhr.responseText, function (k, v) {
                  
+                    if (k === "name") {
+                        d.querySelector('#city').innerHTML = v;
+                    }
                     if (k === "dt_txt") {
                         arrJSON.push(v);
                     }
