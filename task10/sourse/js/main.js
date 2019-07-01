@@ -41,10 +41,10 @@
 
 
     const history = () => {
-        
+
         let itemTime = null,
             len = 40;
-       
+
 
 
         for (let i = 0; i < len; i++) {
@@ -62,7 +62,7 @@
     };
 
 
-    function pushHtml() {
+    const pushHtml = () => {
         let len = arr.length;
         let elem1 = d.querySelector('*[data-time]'),
             elem2 = d.querySelector('*[data-temp]'),
@@ -70,7 +70,7 @@
 
 
         for (let i = 0; i < len; i++) {
-            
+
             elem1.innerHTML = arr[i].day.toLocaleString('ru', {
                 day: 'numeric',
                 month: 'long',
