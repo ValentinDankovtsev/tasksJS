@@ -34,8 +34,6 @@
 
         xhr.send();
 
-        console.log(arrJSON);
-
         history();
     };
 
@@ -43,9 +41,10 @@
 
 
     const history = () => {
-        //  debugger;
-        let itemTime = null;
-        let len = 40;
+        
+        let itemTime = null,
+            len = 40;
+       
 
 
         for (let i = 0; i < len; i++) {
@@ -71,10 +70,7 @@
 
 
         for (let i = 0; i < len; i++) {
-            debugger;
-
-
-
+            
             elem1.innerHTML = arr[i].day.toLocaleString('ru', {
                 day: 'numeric',
                 month: 'long',
@@ -89,18 +85,11 @@
             let createElement = d.querySelector(".first");
             let elemCLone = createElement.querySelector(".hours");
             let clone = elemCLone.cloneNode(true);
-            // list.insertBefore(clone);
+
             createElement.appendChild(clone);
             createElement.lastChild.classList.remove('hide');
         }
-
-
-
     }
-
-
-
-
 
 
 
@@ -123,7 +112,6 @@
 
 
     d.querySelector('#button').addEventListener('click', delegater);
-
 
 
 
