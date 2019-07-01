@@ -7,14 +7,25 @@
     let lat;
     let long;
     let arrJSON = [];
-    let arr = [];
+    let flag = false;
+
+    let parent = d.querySelector("#weather");
 
     const loadWeather = (lat, lon) => {
+
+        if (flag) {
+
+            while (parent.children.length > 2) {
+                parent.removeChild(parent.lastChild);
+            }
+            arrJSON = [];
+        }
 
         if (!lat) {
             lat = "47.2416334";
             lon = "38.86760129999993";
         }
+
         let xhr = new XMLHttpRequest();
 
         xhr.open("GET",
@@ -22,75 +33,73 @@
         );
 
 
-
         xhr.onreadystatechange = function () {
             if (xhr.readyState != 4) return;
+
             if (xhr.status != 200) {
                 console.log(xhr.status + ": " + xhr.statusText);
             } else {
-                arrJSON.push(JSON.parse(xhr.responseText));
+
+                JSON.parse(xhr.responseText, function (k, v) {
+                 
+                    if (k === "dt_txt") {
+                        arrJSON.push(v);
+                    }
+                    if (k === "temp") {
+                        arrJSON.push(v);
+                    }
+                    if (k === "icon") {
+                        arrJSON.push(v);
+                    } else if (arrJSON.length == 3) {
+                        pushHtml.apply(this, arrJSON);
+                        arrJSON.length = 0;
+                    }
+
+                });
             }
         };
 
         xhr.send();
-
-        history();
+       
     };
 
-
-
-
-    const history = () => {
-
-        let itemTime = null,
-            len = 40;
-
-
-
-        for (let i = 0; i < len; i++) {
-            itemTime = {};
-            for (let key in arrJSON) {
-                itemTime.day = new Date(arrJSON[0].list[i].dt_txt);
-                itemTime.temp = arrJSON[0].list[i].main.temp;
-                itemTime.icon = arrJSON[0].list[i].weather[0].icon;
-                arr.push(itemTime);
-            }
-
-
+    const pushHtml = (t, icon, dt) => {
+        if (arrJSON.length == 0) {
+            return;
         }
-        return pushHtml();
-    };
 
 
-    const pushHtml = () => {
-        let len = arr.length;
         let elem1 = d.querySelector('*[data-time]'),
             elem2 = d.querySelector('*[data-temp]'),
             elem3 = d.querySelector('*[data-icon]');
 
 
-        for (let i = 0; i < len; i++) {
+        elem1.innerHTML = new Date(dt).toLocaleString('ru', {
+            day: 'numeric',
+            month: 'long',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        });
 
-            elem1.innerHTML = arr[i].day.toLocaleString('ru', {
-                day: 'numeric',
-                month: 'long',
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric'
-            });
-            elem2.innerHTML = Math.floor(arr[i].temp - 273, 15) + "&#8451";
-            elem3.innerHTML = "<img src='http://openweathermap.org/img/wn/" + arr[i].icon + "@2x.png'>";
+        let Cels = t - 273.15
+        elem2.innerHTML = Cels.toFixed(1) + "  &#8451";
+
+        elem3.innerHTML = "<img src='http://openweathermap.org/img/wn/" + icon + "@2x.png'>";
 
 
-            let createElement = d.querySelector(".first");
-            let elemCLone = createElement.querySelector(".hours");
-            let clone = elemCLone.cloneNode(true);
+        let parent = d.querySelector("#weather");
+        let elem = parent.querySelector(".weatherData");
+        let clone = elem.cloneNode(true);
 
-            createElement.appendChild(clone);
-            createElement.lastChild.classList.remove('hide');
-        }
+        parent.appendChild(clone);
+        parent.lastChild.classList.remove('hide');
+
+
+        if (parent.children.length > 2) flag = true;
+
+
     }
-
 
 
     const delegater = (e) => {
@@ -108,12 +117,27 @@
 
     };
 
-    loadWeather();
-
 
     d.querySelector('#button').addEventListener('click', delegater);
 
 
+
+    (function initMap() {
+        let d = document;
+
+        let input;
+
+        input = d.querySelector("#pac-input");
+        let autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.addListener('place_changed', function () {
+            let place = autocomplete.getPlace();
+
+            d.querySelector("#pac-input").dataset.lat = place.geometry.location.lat()
+            d.querySelector("#pac-input").dataset.long = place.geometry.location.lng()
+        });
+
+    })();
 
 
 })();

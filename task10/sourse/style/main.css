@@ -1,45 +1,42 @@
-.row{
-    margin: 0 auto;
-}
-
-.col-lg-2 {
-    padding: 0;
-    margin-left:20px; 
-    height: auto;
+body{
+    font-size: 18px;
+    line-height: 2;
 }
 
 
-td{
+.col-lg {
+    height:auto;
+    margin-top: 5px;
+
+}
+
+
+.item {
+    display: inline-block;
     border-left: 1px #6d6161 solid;
     border-bottom: 1px #686262 solid;
-    margin: 0;
-    width: 78px;
-    padding-left: 2px;
-    height: 28px;
-}
-.hours{
-    height: auto;
+   
+    width: 33%;
     
+    height: 42px;
+    background-color: rgb(247, 197, 136);
 }
 
-    
-.pac-card{
-    height: fit-content;
-}
 
-.item{
+
+
+.item {
     text-align: center;
-}
-.item > img {
     
+}
+
+.item>img {
+   
     width: 40px;
     height: 40px;
-    
-  }
 
-  .hide{
-      display: none;
-  }
+}
 
-   
-
+.hide {
+    display: none;
+}

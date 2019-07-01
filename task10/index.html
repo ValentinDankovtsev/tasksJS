@@ -15,7 +15,7 @@
 
     <div class="container-fluid">
 
-        <div class="pac-card" id="pac-card">
+        <div class="col-lg pac-card" >
             <div>
                 <div id="title">
                     Прогноз погоды на 5 дней.
@@ -24,124 +24,37 @@
 
 
             <div id="pac-container" class="form-inline">
-               
-                <input id="pac-input" class="form-control" type="text" placeholder="Поиск города..." data-lat="" data-long="">
-                <button id="button" class="btn btn-success" data-push >Загрузить погоду!</button>
+
+                <input id="pac-input" class="form-control" type="text" placeholder="Поиск города..." data-lat=""
+                    data-long="">
+                <button id="button" class="btn btn-success" data-push>Загрузить погоду!</button>
             </div>
 
-           
+
         </div>
-    
-        <div class="row">
-            <div class=" col-lg-2 pac-card" data-day="0">
-                <div id="title">
-                    <!-- Сегодня --> Погода на 5 дней 
-                </div>
-                <table class = "first">
-                    
-                    <tr class="hours hide" data-hour=""  >
-                        <td class="item" data-time></td>
-                        <td class="item" data-temp></td>
-                        <td class="item" data-icon></td>
-                    </tr>
-                </table>
+
+        <div class="col-lg" id="weather">
+
+            <div id="title">
+                Погода на 5 дней
+            </div>
+
+            <div class="weatherData hide ">
+
+                <div class="item" data-time></div>
+                <div class="item" data-temp></div>
+                <div class="item" data-icon></div>
 
             </div>
 
-            <!-- <div class=" col-lg-2 pac-card" data-day="1">
-                <div id="title">
-                    +1
-                </div>
-                <table>
-                    <tr class="hours" data-hour="6">
-                        <td class="item" data-item="time">11</td>
-                        <td class="item" data-item="temp">30</td>
-                        <td class="item" data-item="weatherTime">Rain</td>
-                    </tr>
-                  
-                </table>
-            </div>
-
-            <div class=" col-lg-2 pac-card" data-day="2">
-                <div id="title">
-                    +2
-                </div>
-                <table>
-                    <tr class="hours" data-hour="6">
-                        <td class="item" data-item="time">11</td>
-                        <td class="item" data-item="temp">30</td>
-                        <td class="item" data-item="weatherTime">Rain</td>
-                    </tr>
-                   
-                </table>
-            </div>
-
-            <div class=" col-lg-2 pac-card" data-day="3">
-                <div id="title">
-                    +3
-                </div>
-                <table>
-                    <tr class="hours" data-hour="6">
-                        <td class="item" data-item="time">11</td>
-                        <td class="item" data-item="temp">30</td>
-                        <td class="item" data-item="weatherTime">Rain</td>
-                    </tr>
-                  
-                </table>
-            </div>
-
-            <div class="col-lg-2 pac-card" data-day="4">
-                <div id="title">
-                    +4
-                </div>
-                <table>
-                    <tr class="hours" data-hour="6">
-                        <td class="item" data-item="time">11</td>
-                        <td class="item" data-item="temp">30</td>
-                        <td class="item" data-item="weatherTime">Rain</td>
-                    </tr>
-                   
-                </table>
-
-            </div> -->
         </div>
 
     </div>
 
-    
- 
-
-
-
-    <script>
-        let d = document,
-            w = window;
-
-        function initMap() {
-
-
-            let latitude,
-                longtitude,
-                input;
-
-            input = d.querySelector("#pac-input");
-            let autocomplete = new google.maps.places.Autocomplete(input);
-
-            autocomplete.addListener('place_changed', function () {
-                let place = autocomplete.getPlace();
-
-                console.log(place.geometry.location.lat());
-                console.log(place.geometry.location.lng());
-                d.querySelector("#pac-input").dataset.lat = place.geometry.location.lat()
-                d.querySelector("#pac-input").dataset.long = place.geometry.location.lng()
-            })
-
-        }
-    </script>
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADLxNCqrgt5WNkMDZU7FJXnnBpzk-rE54&libraries=places&callback=initMap">
-    </script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADLxNCqrgt5WNkMDZU7FJXnnBpzk-rE54&libraries=places&callback=" + initMap>
+      </script>
     <script src="/sourse/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../sourse/js/bootstrap.min.js"></script>
