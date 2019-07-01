@@ -8,10 +8,10 @@
     let long;
     let arrJSON = [];
     let arr = [];
-    
+
     const loadWeather = (lat, lon) => {
 
-        if (lat.length == 0 || !lat) {
+        if (!lat) {
             lat = "47.2416334";
             lon = "38.86760129999993";
         }
@@ -77,7 +77,10 @@
 
             elem1.innerHTML = arr[i].day.toLocaleString('ru', {
                 day: 'numeric',
-                month: 'long'
+                month: 'long',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
             });
             elem2.innerHTML = Math.floor(arr[i].temp - 273, 15) + "&#8451";
             elem3.innerHTML = "<img src='http://openweathermap.org/img/wn/" + arr[i].icon + "@2x.png'>";
