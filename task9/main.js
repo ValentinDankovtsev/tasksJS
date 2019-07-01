@@ -25,7 +25,7 @@
             d.querySelector('#result').value = this.res;
         },
         operation: function (oper) {
-            debugger;
+            
             if (typeof this.cash.substr(-1) != "number") {
                 this.flag = true;
             }
@@ -128,7 +128,7 @@
         
         let char = String.fromCharCode(e.which);
 
-        if ( e.keyCode === 13 ){ char = "="; calculator.operation(char); return }
+        if ( e.keyCode === 13 ){ char = "="; calculator.operation(char); return; }
 
         switch (char) {
             case '0':
