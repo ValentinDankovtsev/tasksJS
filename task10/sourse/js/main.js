@@ -46,6 +46,9 @@
                  
                     
                     switch (k) {
+                        case 'name':
+                                d.querySelector('#city').innerHTML = v;
+                                break;
 
                         case 'dt_txt':
                         case 'temp':
