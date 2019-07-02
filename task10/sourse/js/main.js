@@ -44,21 +44,7 @@
 
                 JSON.parse(xhr.responseText, function (k, v) {
                  
-                    // if (k === "name") {
-                    //     d.querySelector('#city').innerHTML = v;
-                    // }
-                    // if (k === "dt_txt") {
-                    //     arrJSON.push(v);
-                    // }
-                    // if (k === "temp") {
-                    //     arrJSON.push(v);
-                    // }
-                    // if (k === "icon") {
-                    //     arrJSON.push(v);
-                    // } else if (arrJSON.length == 3) {
-                    //     pushHtml.apply(this, arrJSON);
-                    //     arrJSON.length = 0;
-                    // }
+                    
                     switch (k) {
 
                         case 'dt_txt':
