@@ -1,3 +1,5 @@
+
+    
 ;
 (function () {
 
@@ -42,18 +44,33 @@
 
                 JSON.parse(xhr.responseText, function (k, v) {
                  
-                    if (k === "name") {
-                        d.querySelector('#city').innerHTML = v;
+                    // if (k === "name") {
+                    //     d.querySelector('#city').innerHTML = v;
+                    // }
+                    // if (k === "dt_txt") {
+                    //     arrJSON.push(v);
+                    // }
+                    // if (k === "temp") {
+                    //     arrJSON.push(v);
+                    // }
+                    // if (k === "icon") {
+                    //     arrJSON.push(v);
+                    // } else if (arrJSON.length == 3) {
+                    //     pushHtml.apply(this, arrJSON);
+                    //     arrJSON.length = 0;
+                    // }
+                    switch (k) {
+
+                        case 'dt_txt':
+                        case 'temp':
+                        case 'icon':
+                                arrJSON.push(v); 
+                             break;
+                        default:
+                        break;
                     }
-                    if (k === "dt_txt") {
-                        arrJSON.push(v);
-                    }
-                    if (k === "temp") {
-                        arrJSON.push(v);
-                    }
-                    if (k === "icon") {
-                        arrJSON.push(v);
-                    } else if (arrJSON.length == 3) {
+                
+                    if (arrJSON.length == 3) {
                         pushHtml.apply(this, arrJSON);
                         arrJSON.length = 0;
                     }
@@ -123,9 +140,7 @@
 
     d.querySelector('#button').addEventListener('click', delegater);
 
-
-
-    (function initMap() {
+    google.maps.event.addDomListener(window, 'load', function () {
         let d = document;
 
         let input;
@@ -139,8 +154,25 @@
             d.querySelector("#pac-input").dataset.lat = place.geometry.location.lat()
             d.querySelector("#pac-input").dataset.long = place.geometry.location.lng()
         });
+        
 
-    })();
+   });
+
+   
+
 
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+

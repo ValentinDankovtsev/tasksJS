@@ -8,7 +8,6 @@ body{
     height:auto;
     margin-top: 5px;
     
-
 }
 
 
@@ -17,9 +16,7 @@ body{
     display: inline-block;
     border-left: 1px #6d6161 solid;
     border-bottom: 1px #686262 solid;
-   
     width: 33%;
-    
     height: 42px;
     background-color: rgb(247, 197, 136);
 }
