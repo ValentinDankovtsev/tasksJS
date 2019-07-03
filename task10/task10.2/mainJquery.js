@@ -20,34 +20,36 @@
         }
 
         $.getJSON("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long + "&appid=eef6dc015e2a6bb471a917b31186f693", function (response) {
-            $.each(response, function (k, v) {
+          
+           $('#city').html(response.city.name);
 
-                if (k == "list") {
-                    flag = true;
-                    $.each(v, function (key, value) {
+           $.each(response.list, function (k, v) {
 
-                        let localData = new Date(value.dt_txt).toLocaleString('ru', {
-                            day: 'numeric',
-                            month: 'long',
-                            hour: 'numeric',
-                            minute: 'numeric',
-                            second: 'numeric'
-                        });
+                flag = true;
 
-                        let temperatura = (value.main.temp - 273.15).toFixed(1) + "  &#8451";
-                        let iconID = "<img src='http://openweathermap.org/img/wn/" + value.weather[0].icon + "@2x.png'>";
+                let localData = new Date(v.dt_txt).toLocaleString('ru', {
+                    day: 'numeric',
+                    month: 'long',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric'
+                });
 
-                        clone = elem.clone();
-                        clone.removeClass("hide");
-                        parent.append(clone);
+                let temperatura = (v.main.temp - 273.15).toFixed(1) + "  &#8451";
+                let iconID = "<img src='http://openweathermap.org/img/wn/" + v.weather[0].icon + "@2x.png'>";
 
-                        $("[data-time]:last").html(localData);
-                        $("[data-temp]:last").html(temperatura);
-                        $("[data-icon]:last").html(iconID);
+                clone = elem.clone();
+                clone.removeClass("hide");
+                parent.append(clone);
 
-                    });
-                }
+                $("[data-time]:last").html(localData);
+                $("[data-temp]:last").html(temperatura);
+                $("[data-icon]:last").html(iconID);
+
+
+
             });
+            
         });
     });
 
