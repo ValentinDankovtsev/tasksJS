@@ -1,11 +1,8 @@
-
-    
 ;
 (function () {
 
     let d = document,
         w = window;
-
     let lat;
     let long;
     let arrJSON = [];
@@ -34,7 +31,6 @@
             "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=eef6dc015e2a6bb471a917b31186f693"
         );
 
-
         xhr.onreadystatechange = function () {
             if (xhr.readyState != 4) return;
 
@@ -43,22 +39,21 @@
             } else {
 
                 JSON.parse(xhr.responseText, function (k, v) {
-                 
-                    
+
                     switch (k) {
                         case 'name':
-                                d.querySelector('#city').innerHTML = v;
-                                break;
+                            d.querySelector('#city').innerHTML = v;
+                            break;
 
                         case 'dt_txt':
                         case 'temp':
                         case 'icon':
-                                arrJSON.push(v); 
-                             break;
+                            arrJSON.push(v);
+                            break;
                         default:
-                        break;
+                            break;
                     }
-                
+
                     if (arrJSON.length == 3) {
                         pushHtml.apply(this, arrJSON);
                         arrJSON.length = 0;
@@ -67,16 +62,13 @@
                 });
             }
         };
-
         xhr.send();
-       
     };
 
     const pushHtml = (t, icon, dt) => {
         if (arrJSON.length == 0) {
             return;
         }
-
 
         let elem1 = d.querySelector('*[data-time]'),
             elem2 = d.querySelector('*[data-temp]'),
@@ -91,11 +83,10 @@
             second: 'numeric'
         });
 
-        let Cels = t - 273.15
+        let Cels = t - 273.15;
         elem2.innerHTML = Cels.toFixed(1) + "  &#8451";
 
         elem3.innerHTML = "<img src='http://openweathermap.org/img/wn/" + icon + "@2x.png'>";
-
 
         let parent = d.querySelector("#weather");
         let elem = parent.querySelector(".weatherData");
@@ -104,12 +95,9 @@
         parent.appendChild(clone);
         parent.lastChild.classList.remove('hide');
 
-
         if (parent.children.length > 2) flag = true;
 
-
-    }
-
+    };
 
     const delegater = (e) => {
         let target = e.target;
@@ -121,11 +109,8 @@
             long = d.querySelector("#pac-input").dataset.long;
 
             loadWeather(lat, long);
-
         }
-
     };
-
 
     d.querySelector('#button').addEventListener('click', delegater);
 
@@ -140,28 +125,10 @@
         autocomplete.addListener('place_changed', function () {
             let place = autocomplete.getPlace();
 
-            d.querySelector("#pac-input").dataset.lat = place.geometry.location.lat()
-            d.querySelector("#pac-input").dataset.long = place.geometry.location.lng()
+            d.querySelector("#pac-input").dataset.lat = place.geometry.location.lat();
+            d.querySelector("#pac-input").dataset.long = place.geometry.location.lng();
         });
-        
 
-   });
-
-   
-
-
+    });
 
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
